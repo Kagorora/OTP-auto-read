@@ -11,12 +11,12 @@ const App = () => {
   const [email, setEmail] = useState("");
 
   const handleOTP = () => {
+
     setButtonClicked(true)
+ }
 
-  }
-
-  useEffect(() => {
-    if (buttonClicked === true) {
+useEffect(() => {
+  if(buttonClicked && buttonClicked === true) {
       if ('OTPCredential' in window) {
         window.addEventListener('DOMContentLoaded', e => {
           const input = document.querySelector('input[autocomplete="one-time-code"]');
@@ -44,7 +44,7 @@ const App = () => {
         });
       }
     }
-  }, [buttonClicked])
+}, [buttonClicked])
 
 
   return (
